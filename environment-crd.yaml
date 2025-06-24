@@ -1,0 +1,20 @@
+apiVersion: codeartsgitops.codearts.crossplane.io/v1alpha1
+kind: Environment
+metadata:
+  name: greg-environment
+spec:
+  forProvider:
+    projectId: b3f25c9ab5cb457b97aa19bbc06b2743
+    environmentName: greg-environment
+    resourceType: CCE
+    environmentCategoryId: 8dc56cd6c2cf44029181f04025ed173a
+    # optional:
+    endpointId: ""
+    endpointName: ""
+    description: "greg description"
+    region: "ap-southeast-3"
+    clusterId: "27a1c26f-b280-11ef-8ea9-0255ac10003b"
+    userType: 0
+
+  providerConfigRef:
+    name: codearts
