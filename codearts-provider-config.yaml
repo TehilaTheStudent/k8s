@@ -5,7 +5,6 @@ metadata:
 spec:
   huaweiPlatformConfig:
     releaseServerBaseUrl: https://cloudrelease-ext.ap-southeast-3.myhuaweicloud.com
-    genAIEnabled: false
   credentials:
     source: Secret
     secretRef:
