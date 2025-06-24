@@ -1,0 +1,8 @@
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-codearts
+spec:
+  packagePullSecrets:
+    - name: ghcr-secret
+  package: ghcr.io/trc-sdlc-huawei/provider-codearts:v0.0.0-42.ge87465b
