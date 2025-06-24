@@ -1,0 +1,6 @@
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-template-ci-cd
+spec:
+  package: ghcr.io/tehilathestudent/provider-template-ci-cd:v0.0.0-28.g08c6c16
