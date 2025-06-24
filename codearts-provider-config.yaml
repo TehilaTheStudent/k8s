@@ -1,0 +1,14 @@
+apiVersion: codearts.crossplane.io/v1alpha1
+kind: ProviderConfig
+metadata:
+  name: codearts
+spec:
+  huaweiPlatformConfig:
+    releaseServerBaseUrl: https://cloudrelease-ext.ap-southeast-3.myhuaweicloud.com
+    genAIEnabled: false
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: default
+      name: codearts-secret
+      key: credentials
