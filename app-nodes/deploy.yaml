@@ -1,0 +1,31 @@
+# nginx-anti-affinity.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spread-nginx
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: spread-nginx
+  template:
+    metadata:
+      labels:
+        app: spread-nginx
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - spread-nginx
+              topologyKey: "kubernetes.io/hostname"
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
